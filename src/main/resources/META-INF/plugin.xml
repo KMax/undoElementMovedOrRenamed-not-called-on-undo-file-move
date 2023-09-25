@@ -1,18 +1,13 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.kmax.undoelementmovedorrenamednotcalledonundofilemove</id>
-    <name>undoElementMovedOrRenamed-not-called-on-undo-file-move Template</name>
+    <name>UndoElementMovedOrRenamed-Not-Called-on-Undo-File-Move</name>
     <vendor>kmax</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.kmax.undoelementmovedorrenamednotcalledonundofilemove.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <refactoring.elementListenerProvider
+                implementation="com.github.kmax.undoelementmovedorrenamednotcalledonundofilemove.TestRefactoringElementListenerProvider"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.kmax.undoelementmovedorrenamednotcalledonundofilemove.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
